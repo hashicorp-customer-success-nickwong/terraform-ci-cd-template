@@ -6,10 +6,10 @@ terraform {
   }
 
   backend "remote" {
-    organization = "jaredfholgate-hashicorp"
+    organization = "nw-tfc-test"
 
     workspaces {
-      prefix = "jared-holgate-demo-one-"
+      prefix = "nwong-demo-one-"
     }
   }
 }
@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 module "stack_azure_virtual_machine_example" {
-  source                       = "app.terraform.io/jaredfholgate-hashicorp/stack_azure_virtual_machine_example/jaredholgate"
+  source                       = "app.terraform.io/nw-tfc-test/stack_azure_virtual_machine_example/demo"
   resource_group_name          = format("%s%s", var.resource_group_name_prefix, var.deployment_environment)
   primary_cluster_size         = var.primary_cluster_size 
   secondary_cluster_size       = var.secondary_cluster_size
@@ -27,6 +27,6 @@ module "stack_azure_virtual_machine_example" {
   tags = {
     environment      = var.deployment_environment
     application-name = "Demonstration"
-    owner            = "Jared Holgate"
+    owner            = "Nick Wong"
   }
 }
