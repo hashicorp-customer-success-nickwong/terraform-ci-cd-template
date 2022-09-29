@@ -14,10 +14,10 @@ variable "deployment_date" {
   type = string
 }
 variable "primary_cluster_size" {
-  type = number
+  type    = number
   default = 1
 }
 variable "secondary_cluster_size" {
-  type = number
+  type    = number
   default = 1
 }
